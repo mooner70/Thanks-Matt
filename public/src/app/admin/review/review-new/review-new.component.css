@@ -1,0 +1,39 @@
+form {
+    width:50%;
+    margin: auto;
+    overflow: hidden;
+}
+.mat-form-field {
+    width: 100%;
+}
+
+h1 {
+  width:100%;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input-container > * {
+  width: 45%;
+}
+
+.form-label {
+    margin-top: 3%;
+}
+
+input.right-align {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  width:100%;
+}
+
+.submit-button {
+    margin-top: 3%;
+}

@@ -1,0 +1,54 @@
+@media (max-width: 450px) {
+    .text-hide {
+        max-height: 1.5em!important;
+        min-height: 1.5em!important;
+    }
+
+    .mat-button {
+        min-width: 60px;
+        margin:0!important;
+        padding:0!important;
+        font-size: 12px!important;
+    }
+}
+
+mat-toolbar {
+    width: 100%;
+    border-bottom: 1px solid #00B8D4;
+    position:fixed;
+    top:0;
+    z-index: 5!important;
+}
+
+.spacer {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.header {
+    color: #00B8D4;
+    font-family: 'Jacques Francois Shadow', cursive;
+    letter-spacing: 0.2rem;
+}
+
+#logo {
+    width: 10rem;
+    max-height: 100%;
+}
+#logo:hover {
+    text-decoration: none;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 3em;
+}
+
+.text-hide {
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 2em;
+    min-height: 2em;
+}

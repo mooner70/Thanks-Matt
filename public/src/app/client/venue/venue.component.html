@@ -1,0 +1,260 @@
+<div class="box">
+    <div id="slider">
+        <figure *ngFor="let gallery of venue.gallery">
+            <img src="https://s3-us-west-2.amazonaws.com/tulsa-venues/Venues/{{venue._id}}/Gallery/{{gallery.name}}" alt>
+        </figure>
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="top">
+            <div class="col-3" id="left-col">
+                <div class="top-left">
+                    <div class="mx-auto" id="rating" *ngIf="ag == 0">
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                    </div>
+                    <div class="mx-auto" id="rating" *ngIf="ag > 0 && ag <= 1">
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                    </div>
+                    <div class="mx-auto" id="rating" *ngIf="ag > 1 && ag <= 2">
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                    </div>
+                    <div class="mx-auto" id="rating" *ngIf="ag > 2 && ag <= 3">
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                    </div>
+                    <div class="mx-auto" id="rating" *ngIf="ag > 3 && ag <= 4">
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons grey">&#xE83A;</i>
+                    </div>
+                    <div class="mx-auto" id="rating" *ngIf="ag >= 5">
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                        <i class="material-icons">&#xE83A;</i>
+                    </div>
+                    <ul class="text-left">
+                        <li>
+                            <h5 class="black">{{venue?.address}}, {{venue?.city}} {{venue?.state | uppercase}}</h5>
+                        </li>
+                        <li>
+                            <a href='tel:{{ venue.phone }}' data-type='phone'>
+                                <p>{{ venue?.phone }}</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='http://{{venue.website}}' target='_blank' rel='noopener' matTooltip="View {{venue.name}}'s' website">
+                                <p><span class="color">{{venue?.website}}</span></p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='mailto:{{ venue.email }}' target='_top'>
+                                <p><span class="color">{{ venue?.email }}</span></p>
+                            </a>
+                        </li>
+                        <li *ngIf="venue.facebook_url" class="social-media">
+                            <a href='{{venue.facebook_url}}' target='_blank' rel='noopener' matTooltip="{{venue.name}}'s' Facebook page">
+                                <img src="/assets/images/facebook.svg" alt="Facebook link">
+                            </a>
+                        </li>
+                        <li *ngIf="venue.instagram_url" class="social-media">
+                            <a href='{{venue.instagram_url}}' target='_blank' rel='noopener' matTooltip="{{venue.name}}'s' Facebook page">
+                                <img src="/assets/images/instagram.svg" alt="instagram link">
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                <hr>
+                <div class="cost">
+                    <h5>Starting Cost: </h5>
+                    <h3>{{ venue?.minAmmount | currency }}</h3>
+                </div>
+                <hr>
+                <div class="capacity">
+                        <h5>Capacity: </h5>
+                        <h3>{{ venue?.maxCapacity }}</h3>
+                </div>
+                <hr>
+                <mat-list [ngStyle]="{ 'width': '100%', 'display': 'block' }" *ngFor="let amenity of venue.amenities">
+                    <mat-list-item>
+                        <img src="/assets/images/checkbox.svg" alt="Check Box icon"> {{amenity?.name}}
+                    </mat-list-item>
+                </mat-list>
+                <hr>
+                <div>
+                    <a [routerLink]="['/vendor', 'display', vendor._id]">
+                        <mat-card class="card">
+                            <h6 class="text-center"><span>Featured Vendor</span></h6>
+                            <ng-container *ngIf="vendor?.pic_url; else elseTemplate">
+                                <div class="vendor-link">
+                                    <div class="text-center">
+                                        <a [routerLink]="['/vendor', 'display', vendor._id]">
+                                            <img src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/{{vendor.pic_url}}' class="img-thumbnail" id="vendor-image" alt="Vendor Picture" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <div class="vendor-link">
+                                    <div class="text-center">
+                                        <a [routerLink]="['/vendor', 'display', vendor._id]">
+                                            <img src='/assets/images/missing.png' class="img-thumbnail" id="vendor-image" alt="Venue Picture">
+                                        </a>
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <mat-card-title>
+                                <h5 class="text-center">{{vendor?.name}}</h5>
+                                <span class="line"></span>
+                                <mat-card-subtitle class="text-center">{{vendor?._category?.name | titlecase}}</mat-card-subtitle>
+                            </mat-card-title>
+                            <mat-card-actions>
+                                <div class="text-center">
+                                    <button mat-button [routerLink]="['/vendor', 'display', vendor._id]" matTooltip="View {{vendor.name}}"><span>LEARN MORE</span></button>
+                                </div>
+                            </mat-card-actions>
+                        </mat-card>
+                    </a>
+                </div>
+            </div>
+            <div class="col-9" id="right-col">
+                <div id="top-right">
+                    <div class="container" id="venue-description">
+                        <div class="text-center">
+                            <h2>{{venue?.name}}</h2>
+                            <p>{{venue?.description}}</p>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <div class="col-6">
+                            <div class="text-center">
+                                <iframe [src]="url | safe" width="600" height="338" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <ng-template cdk-portal>
+                                <div class="overlay">
+                                    <iframe [src]="tourUrl | safe"></iframe>
+                                </div>
+                            </ng-template>
+                            <div class="text-center">
+                                <img src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Venues/{{venue._id}}/TourPic/{{venue.tourPicURL}}' class="img-thumbnail" alt="Venue 3D Tour">
+                                <div class="image-button">
+                                    <button mat-button (click)="openPanelWithBackdrop()">
+                                        <h5 class="white" id="play-text">3D TOUR</h5>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div *ngFor="let gallery of venue.gallery" id="gallery">
+                        <div class="col-2">
+                            <img src="https://s3-us-west-2.amazonaws.com/tulsa-venues/Venues/{{venue._id}}/Gallery/{{gallery.name}}" alt="Venue Gallery Picture" class="img-thumbnail gallery-image">
+                        </div>
+                    </div>  
+                </div>
+                <div class="container">
+                    <div class="reviews">
+                        <h2 class="text-center">Reviews</h2>
+                        <span class="line"></span>
+                        <div class="clearfix">
+                            <button mat-button color="primary" [routerLink]="['/venue', venue._id, 'review']" class="float-right">Add a Review</button>
+                        </div>
+                        <div *ngFor="let review of venue.reviews">
+                            <ng-container *ngIf="review.approved">
+                                <mat-card class="reviews-post">
+                                    <mat-card-header>
+                                        <mat-card-title>
+                                            <h6>{{review?.subject}}</h6>
+                                            <div id="rating" *ngIf="review.rating <= 1">
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons grey" >&#xE83A;</i>
+                                                <i class="material-icons grey" >&#xE83A;</i>
+                                                <i class="material-icons grey" >&#xE83A;</i>
+                                                <i class="material-icons grey" >&#xE83A;</i>
+                                            </div>
+                                            <div id="rating" *ngIf="review.rating == 2">
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons grey">&#xE83A;</i>
+                                                <i class="material-icons grey">&#xE83A;</i>
+                                                <i class="material-icons grey">&#xE83A;</i>
+                                            </div>
+                                            <div id="rating" *ngIf="review.rating == 3">
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons grey">&#xE83A;</i>
+                                                <i class="material-icons grey">&#xE83A;</i>
+                                            </div>
+                                            <div id="rating" *ngIf="review.rating == 4">
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons grey">&#xE83A;</i>
+                                            </div>
+                                            <div id="rating" *ngIf="review.rating == 5">
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                                <i class="material-icons">&#xE83A;</i>
+                                            </div>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content>
+                                        <p>{{review?.content}}</p>
+                                    </mat-card-content>
+                                    <mat-card-actions align="end">
+                                        <button mat-button (click)="reportReview()">Report</button>
+                                    </mat-card-actions>
+                                </mat-card>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+                <div class="map">
+                    <agm-map [latitude]='venue.lat' [longitude]='venue.lng' [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
+                        <agm-marker [title]="venue.address" [latitude]="venue.lat" [longitude]="venue.lng">
+                            <agm-snazzy-info-window [maxWidth]="400" [padding]="0" [closeWhenOthersOpen]="true">
+                                <ng-template>
+                                    <mat-card class="venue-display">
+                                        <mat-card-header>
+                                            <img mat-card-avatar src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Venues/{{venue._id}}/{{venue.pic_url}}' alt="Venue Avatar Picture">
+                                        </mat-card-header>
+                                        <mat-card-content class="text-center">
+                                            <mat-card-subtitle>
+                                                <h6>{{venue?.name}}</h6>
+                                                <h6>{{venue?.address}}</h6>
+                                                <h6>{{venue?.city | titlecase}}, {{venue?.state | uppercase}}</h6>
+                                            </mat-card-subtitle>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </ng-template>
+                            </agm-snazzy-info-window>
+                        </agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<app-admin-nav></app-admin-nav>
+<mat-sidenav-container class="container-fluid">
+    <mat-sidenav #sidenav mode="side" opened="true" class="sidenav">
+        <ul>
+            <li>
+                <button mat-button class="navButton" routerLink="/admin_dashboard">Home</button>
+            </li>
+            <li>
+                <button mat-button class="navButton" routerLink="/list_admin">Admin Users</button>
+            </li>
+            <li>
+                <button mat-button class="navButton" routerLink="/list_amenity">Amenities</button>
+            </li>
+            <li>
+                <button mat-button class="navButton" routerLink="/list_review">Reviews</button>
+            </li>
+            <li>
+                <button mat-button class="navButton" routerLink="/list_vendor">Vendors</button>
+            </li>
+            <li>
+                <button mat-button class="navButton" routerLink="/list_venue">Venues</button>
+            </li>
+            <li>
+                <button mat-button class="navButton" routerLink="/list_category">Venue Categories</button>
+            </li>
+            <li>
+                <button mat-button class="navButton" routerLink="/list_vendor_category">Vendor Categories</button>
+            </li>
+        </ul>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <button mat-button (click)="sidenav.toggle()">Toggle</button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

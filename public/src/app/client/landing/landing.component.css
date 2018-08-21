@@ -1,0 +1,1047 @@
+/* Extra small devices (portrait phones, less than 450px) */
+@media (max-width: 450px) {
+    div.containerX {
+        margin: 0;
+        padding: 0;
+    }
+
+    div.containerY {
+        min-height: 15em;
+        max-height: 15em;
+    }
+
+    .group {
+        display: none;
+    }
+    
+    .col-6 {
+        display: block;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #main {
+        width:100%;
+        max-height: 15em!important;
+        min-height: 15em!important;
+        background-image: url(/assets/images/headerImage.jpg);
+        background-size: 33em 15em;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .main-inner {
+        top: 6rem!important;
+    }
+
+    div.search {
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+    #search-button-style {
+        color: #00B8D4;
+    }
+
+    #search-button-style:hover {
+        border: 2px solid white;
+        background: #00B8D4;
+        color: white;
+    }
+
+    button {
+        margin: auto;
+    }
+
+    h1 {
+        text-align: -webkit-left;
+        color: white;
+        text-shadow: 3px 4px 2px #5f5f5f;
+        font-size: 2rem;
+    }
+
+    h2 {
+        text-align: center;
+        letter-spacing: 0.2rem;
+    }
+
+    div.col-12 {
+        background: #ffffff; /* For browsers that do not support gradients */
+        height: 100%;
+    }
+
+    #vendor {
+        margin-top: 2%;
+    }
+
+    .venue-card-group {
+        display: inline-block;
+        padding: 0;
+        min-width: 100%;
+        margin: 1% 1% 5% 1%;
+
+    }
+
+    .venue-card {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 20rem;
+        min-height: 20rem;
+        overflow: hidden;
+    }
+
+    .mat-card-image {
+        max-height: 13rem;
+        min-height: 13rem;
+    }
+
+    .mat-card-title {
+        padding: 2%;
+    }
+
+    .venue-button {
+        width:100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    h5 {
+    color:#00B8D4;
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    div#slider img {
+        object-fit: cover;
+    }
+
+    #middle-bottom .col-6 {
+        padding: 2%;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 451px) and (max-width: 575.98px) {
+    div.containerX {
+        margin: 0;
+        padding: 0;
+    }
+
+    .containerY {
+        min-height: 20em;
+        max-height: 20em;
+    }
+
+    .group {
+        display: none;
+    }
+    
+    .col-6 {
+        display: block;
+        max-width: 100%;
+    }
+
+    h1 {
+        text-align: -webkit-left;
+        color: white;
+        text-shadow: 3px 4px 2px #5f5f5f;
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #main {
+        width:100%;
+        max-height: 20em!important;
+        min-height: 20em!important;
+        background-image: url(/assets/images/headerImage.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .main-inner {
+        top: 9rem!important;
+    }
+
+    div.search {
+        width: 100%;
+        overflow: hidden;
+    }
+    div.search  img{
+        max-width: 2em;
+        min-width: 2em;
+        max-height: 3em;
+        min-height: 3em;
+    }
+
+    .search-icons {
+        margin: 1%;
+    }
+
+    #search-button-style {
+        color: #00B8D4;
+    }
+
+    #search-button-style:hover {
+        border: 2px solid white;
+        background: #00B8D4;
+        color: white;
+    }
+
+    button {
+        margin: auto;
+    }
+
+    h1 {
+        text-align: -webkit-left;
+        color: white;
+        text-shadow: 3px 4px 2px #5f5f5f;
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        text-align: center;
+        letter-spacing: 0.2rem;
+    }
+
+    div.col-12 {
+        background: #ffffff; /* For browsers that do not support gradients */
+        height: 100%;
+    }
+
+    #vendor {
+        margin-top: 2%;
+    }
+
+    .venue-card-group {
+        display: inline-block;
+        padding: 0;
+        min-width: 100%;
+        margin: 1% 1% 5% 1%;
+
+    }
+
+    .venue-card {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 30rem;
+        min-height: 30rem;
+        overflow: hidden;
+    }
+
+    .mat-card-image {
+        max-height: 20rem;
+        min-height: 20rem;
+    }
+
+    .mat-card-title {
+        padding: 2%;
+    }
+
+    .venue-button {
+        width:100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    h5 {
+        color:#00B8D4;
+    }
+    
+    img {
+        object-fit: cover;
+    }
+
+    div#slider img {
+        object-fit: cover;
+    }
+
+    #middle-bottom .col-6:last-child {
+        padding: 2% 2%;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    div.containerX {
+        margin: 0;
+        padding: 0;
+    }
+
+    .containerY {
+        min-height: 28em;
+        max-height: 28em;
+    }
+
+    .group {
+        width:100%!important;
+    }
+    
+    .col-6 {
+        display: block;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #main {
+        width:100%;
+        max-height: 28em;
+        min-height: 28em;
+        background-image: url(/assets/images/headerImage.jpg);
+    }
+
+    .main-inner {
+        position: absolute;
+        width: 100%;
+        top: 10em;
+    }
+
+    div.search {
+        width: 100%;
+        overflow: hidden;
+    }
+    div.search  img{
+        max-width: 4em;
+        min-width: 4em;
+        max-height: 4em;
+        min-height: 4em;
+    }
+
+    .search-icons {
+        margin: 1%;
+    }
+
+    #search-button-style {
+        color: #00B8D4;
+    }
+
+    #search-button-style:hover {
+        border: 2px solid white;
+        background: #00B8D4;
+        color: white;
+    }
+
+    button {
+        margin: auto;
+    }
+
+    h1 {
+        text-align: -webkit-left;
+        color: white;
+        text-shadow: 3px 4px 2px #5f5f5f;
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        text-align: center;
+        letter-spacing: 0.2rem;
+    }
+
+    div.col-12 {
+        background: #ffffff; /* For browsers that do not support gradients */
+        height: 100%;
+    }
+
+    #vendor {
+        margin-top: 2%;
+    }
+
+    .venue-card-group {
+        display: inline-block;
+        padding: 0;
+        min-width: 100%;
+        margin: 1% 1% 5% 1%;
+
+    }
+
+    .venue-card {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 30rem;
+        min-height: 30rem;
+        overflow: hidden;
+    }
+
+    .mat-card-image {
+        max-height: 20rem;
+        min-height: 20rem;
+    }
+
+    .mat-card-title {
+        padding: 2%;
+    }
+
+    .venue-button {
+        width:100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    h5 {
+        color:#00B8D4;
+    }
+    
+    img {
+        object-fit: cover;
+    }
+
+    div#slider {
+        height: 18em!important;
+    }
+
+    div#slider img {
+        object-fit: contain;
+    }
+    #middle-bottom .col-6:last-child {
+        padding: 5% 10% 2% 2%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    div.containerX {
+        margin: 0;
+        padding: 0;
+    }
+
+    .containerY {
+        min-height: 28em;
+        max-height: 28em;
+    }
+
+    .group {
+        width:75%!important;
+    }
+    
+    .col-6 {
+        display: inline-block;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #main {
+        width:100%;
+        max-height: 28em;
+        min-height: 28em;
+        background-image: url(/assets/images/headerImage.jpg);
+    }
+
+    .main-inner {
+        position: absolute;
+        width: 100%;
+        top: 10em;
+    }
+
+    div.search {
+        width: 100%;
+        overflow: hidden;
+    }
+    div.search  img{
+        max-width: 4em;
+        min-width: 4em;
+        max-height: 4em;
+        min-height: 4em;
+    }
+
+    .search-icons {
+        margin: 1%;
+    }
+
+    #search-button-style {
+        color: #00B8D4;
+    }
+
+    #search-button-style:hover {
+        border: 2px solid white;
+        background: #00B8D4;
+        color: white;
+    }
+
+    button {
+        margin: auto;
+    }
+
+    h1 {
+        text-align: -webkit-left;
+        color: white;
+        text-shadow: 3px 4px 2px #5f5f5f;
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        text-align: center;
+        letter-spacing: 0.2rem;
+    }
+
+    div.col-12 {
+        background: #ffffff; /* For browsers that do not support gradients */
+        height: 100%;
+    }
+
+    #vendor {
+        margin-top: 2%;
+    }
+
+    .venue-card-group {
+        display: inline-block;
+        padding: 0;
+        margin: 1% 1% 5% 1%;
+
+    }
+
+    .venue-card {
+        max-width: 9rem;
+        min-width: 9rem;
+        max-height: 17rem;
+        min-height: 17rem;
+    }
+
+    .mat-card-image {
+        max-height: 10rem;
+        min-height: 10rem;
+        object-position: bottom;
+    }
+
+    .mat-card-title h5 {
+        font-size: 1rem;
+    }
+
+    .venue-button {
+        width:100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    h5 {
+        color:#00B8D4;
+    }
+    
+    img {
+        object-fit: cover;
+    }
+
+    div#slider img {
+        object-fit: contain;
+    }
+
+    #middle-bottom .col-6:last-child {
+        padding: 2% 2%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    div.containerX {
+        margin: 0;
+        padding: 0;
+    }
+
+    .containerY {
+        min-height: 28em;
+        max-height: 28em;
+    }
+    
+    .col-6 {
+        display: inline-block;
+    }
+
+    .group {
+        width:70%!important;
+    }
+
+    #main {
+        width:100%;
+        max-height: 28em;
+        min-height: 28em;
+        background-image: url(/assets/images/headerImage.jpg);
+    }
+
+    .main-inner {
+        position: absolute;
+        width: 100%;
+        top: 10em;
+    }
+
+    div.search {
+        width: 100%;
+        overflow: hidden;
+    }
+    div.search  img{
+        max-width: 5em;
+        min-width: 5em;
+        max-height: 5em;
+        min-height: 5em;
+    }
+
+    .search-icons {
+        margin: 1%;
+    }
+
+    #search-button-style {
+        color: #00B8D4;
+    }
+
+    #search-button-style:hover {
+        border: 2px solid white;
+        background: #00B8D4;
+        color: white;
+    }
+
+    button {
+        margin: auto;
+    }
+
+    h1 {
+        text-align: -webkit-left;
+        color: white;
+        text-shadow: 3px 4px 2px #5f5f5f;
+        font-size: 2.7rem;
+    }
+
+    h2 {
+        text-align: center;
+        letter-spacing: 0.2rem;
+    }
+
+    div.col-12 {
+        background: #ffffff; /* For browsers that do not support gradients */
+        height: 100%;
+    }
+
+    #vendor {
+        margin-top: 2%;
+    }
+
+    .venue-card-group {
+        display: inline-block;
+        padding: 0;
+        margin: 1% 1% 5% 1%;
+
+    }
+
+    .venue-card {
+        max-width: 13rem;
+        min-width: 13rem;
+        max-height: 20rem;
+        min-height: 20rem;
+    }
+
+    .mat-card-image {
+        object-position: bottom;
+        max-height: 13rem;
+        min-height: 13rem;
+    }
+
+    .mat-card-title h5 {
+        font-size: 1.1rem;
+    }
+
+    .venue-button {
+        width:100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    h5 {
+        color:#00B8D4;
+    }
+    
+    img {
+        object-fit: cover;
+    }
+
+    div#slider img {
+        object-fit: contain;
+    }
+
+    #middle-bottom .col-6:last-child {
+        padding: 5% 10% 2% 2%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .containerY {
+        min-height: 28em;
+        max-height: 28em;
+    }
+
+    .main-inner {
+        top: 10em;
+    }
+
+    .col-6 {
+        display: inline-block;
+    }
+
+    .group {
+        width:70%!important;
+    }
+
+    .card {
+        max-width: 15rem;
+        min-width: 15rem;
+        max-height: 20rem;
+        min-height: 20rem;
+    }
+
+    .mat-card-image {
+        max-height: 13rem;
+        min-height: 13rem;
+    }
+
+    .search-icons {
+        margin: 2%;
+    }
+
+    .search-icons img {
+        max-width: 5em;
+        min-width: 5em;
+        max-height: 5em;
+        min-height: 5em;
+    }
+
+    div#slider img {
+        object-fit: contain;
+    }
+
+    .venue-card-group {
+        display: inline-block;
+        padding: 0;
+        margin: 1% 1% 5% 1%;
+
+    }
+
+    .venue-card {
+        max-width: 15rem;
+        min-width: 15rem;
+        max-height: 23rem;
+        min-height: 23rem;
+    }
+
+    .mat-card-image {
+        object-position: bottom;
+        max-height: 15rem;
+        min-height: 15rem;
+    }
+
+    .mat-card-title {
+        padding: 2%;
+    }
+    .mat-card-title h5 {
+        font-size: 1.1rem;
+    }
+
+    #middle-bottom .col-6:last-child {
+        padding: 5% 10% 2% 2%;
+    }
+}
+div.containerX {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width:100%;
+    max-height: 28em;
+    min-height: 28em;
+    background-image: url(/assets/images/headerImage.jpg);
+    -webkit-filter: grayscale(25%);
+    filter: grayscale(25%);
+}
+
+.containerY {
+    min-width: 100%;
+    max-width: 100%;
+    background: #00000091; 
+}
+
+
+.main-inner {
+    position: absolute;
+    width: 100%;
+    top: 10em;
+    color: white;
+    opacity: 1!important;
+}
+
+div.search {
+    width: 100%;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.group {
+    border: 1px solid white;
+    width: 60%;
+    margin: auto;
+    opacity: 1;
+}
+
+.search-icons {
+    display: inline-block;
+    opacity: 1;
+}
+
+.search-icons img {
+    opacity: 1;
+}
+
+.category-name {
+    font-size: 0.7rem;
+    font-weight: bold;
+    opacity: 1;
+}
+
+#search-button {
+    margin-top: 2%;
+    opacity: 1;
+}
+
+#search-button-style {
+    background: #00B8D4;
+    color: white;
+}
+
+#search-button-style:hover {
+    background: white;
+    color: #00B8D4;
+}
+
+button {
+    margin: auto;
+}
+
+h1 {
+    text-align: -webkit-left;
+    color: white;
+    text-shadow: 1px 2px 1px #5f5f5f;
+}
+
+h2 {
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+#middle-top {
+    background-image: url(/assets/images/star.png);
+    background-size: 15em;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position-y: 8.9em;
+    background-position-x: 44em;
+}
+
+#middle-bottom {
+    padding: 0;
+    margin: 2% 0;
+    background-color: #f5f5f5;
+}
+
+#middle-bottom .col-6 {
+    padding: 0;
+    margin: 0;
+}
+
+#middle-bottom .col-6 #search-button-style {
+    margin-top: 10%;
+}
+
+.col-6 {
+    padding: 5% 10%;
+    vertical-align: top;
+}
+
+span {
+    color: #00B8D4;
+}
+
+#middle-left-text {
+    line-height: 2;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+}
+
+
+
+div.col-12 {
+    background: #ffffff;
+    height: 100%;
+}
+
+#bottom-group {
+    padding: 0;
+    margin: 1% 0;
+}
+
+#vendor {
+    margin-top: 2%;
+}
+
+.venue-card-group {
+    display: inline-block;
+    padding: 0;
+    margin: 1% 1% 5% 1%;
+    vertical-align: top; 
+}
+
+.venue-card {
+    border-radius: 5%;
+    padding: 0;
+    overflow: hidden;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.mat-card-image {
+    object-fit: cover;
+    object-position: center;
+}
+.mat-card-subtitle {
+    margin: 0;
+}
+
+.mat-card-subtitle:not(:first-child) {
+    margin-top:0;
+}
+
+.venue-button {
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+}
+
+h5 {
+  color:#00B8D4;
+}
+
+img {
+    object-fit: cover;
+}
+
+.line{
+  display: block;
+  width: 80%;
+  border: 1px solid lightgrey;
+  margin: auto;
+}
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+div#slider { 
+    overflow: hidden;
+    height: 20em;
+}
+div#slider figure img {     
+    width: 100%;
+    min-height: auto;
+}
+
+div#slider img {
+    object-position: center;
+}
+
+div#slider figure { 
+    position: sticky;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: inline-flex;
+    -webkit-animation: 30s slidy infinite;
+    animation: 30s slidy infinite;
+}
+
+div.small-box {
+    background-color: #00B8D4;
+    color: white;
+    display: block;
+    width: 50%;
+    padding: 3%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.small-box h6, p {
+    margin: 0;
+    padding: 0;
+}
+.small-box p {
+    font-size: 0.7rem;
+}
+
+#bottom-paragraph {
+    line-height: 2em;
+}
+
+#vendor-line {
+    width: 65%;
+    margin: 1% auto;
+}
+.white {
+    color: white;
+}

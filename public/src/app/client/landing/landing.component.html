@@ -1,0 +1,96 @@
+<div class="containerX">
+    <hr>
+    <div class="containerY">
+        <div id="main">
+            <div class="main-inner text-center">
+                <h1 class="text-center">Who knows Tulsa better than Tulsans?</h1>
+                <div class="search">
+                    <div class="group">
+                        <div class="search-icons" *ngFor="let category of categories">
+                            <img src="/assets/images/{{category.name}}.png" alt="Category Icon">
+                            <h6 class="category-name">{{ category.name | titlecase }}</h6>
+                        </div>
+                    </div>
+                    <div id="search-button">
+                        <button mat-raised-button routerLink="/search" matTooltip="Search for a Venue" [matTooltipShowDelay]="showDelay" id="search-button-style">VIEW ALL VENUES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12" id="middle-top">
+        <div class="col-6">
+            <h2 class="text-center">UNBIASED SEARCH RESULTS & REAL REVIEWS FROM PEOPLE LIKE YOU, HELPING YOU MAKE YOUR BIG DAY THE PERFECT DAY</h2>
+        </div>
+        <div class="col-6">
+            <h6 class="text-left" id="middle-left-text">Planning a wedding can be stressful! Luckily, you don’t have to waste your time doing endless research or pinging your friends on social media for suggestions on the best venues in Tulsa. We collect all the info on local venues, as well as reviews from actual customers, so you can make an informed decision on where to celebrate your big day. We gladly do the leg work for you, and best of all: <span>IT’S COMPLETELY FREE.</span></h6>
+            <div id="search-button" class="clearfix">
+                <button mat-raised-button routerLink="/search" matTooltip="Search for a Venue" [matTooltipShowDelay]="showDelay" id="search-button-style" class="float-right">BROWSE VENUES</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12" id="middle-bottom">
+        <div class="col-6">
+            <div id="slider">
+                <figure *ngFor="let vendor of vendors">
+                    <img class="d-block" src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/{{vendor.pic_url}}' alt="Vendor Picture">
+                    <div class="small-box">
+                        <a [routerLink]="['/vendor', 'display', vendor._id]" class="white">
+                            <h6>{{vendor?.name | titlecase}}</h6>
+                        </a>
+                    </div>
+                </figure>
+            </div>
+        </div>
+        <div class="col-6">
+            <h2 class="text-left">WE’RE PROUD TO FEATURE ONLY THE BEST TULSA-AREA WEDDING PROFESSIONALS</h2>
+            <div id="search-button" class="clearfix">
+                <button mat-raised-button routerLink="/vendor" matTooltip="Search for a Vendor" [matTooltipShowDelay]="showDelay" id="search-button-style"
+                    class="float-right">BROWSE VENDORS</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12" id="bottom-group">
+        <br>
+        <div class="container" id="vendor">
+            <h2>JUST A FEW OF THE BEST PLACES AROUND TULSA</h2>
+            <span class="line" id="vendor-line"></span>
+            <h6 class="text-center" id="bottom-paragraph">We see a lot of venues and we talk to a lot of owners. Combine that with real opinions from fellow Northeastern Oklahomans
+            and we’re confident in saying that you can find your dream wedding location on Tulsa Venues. Here’s just a sample of the vetted venues you’ll find inside:</h6>
+            <div class="venue-card-group" *ngFor="let venue of venues; let i = index">
+                <a [routerLink]="['/venue', 'display', venue._id]">
+                    <mat-card class="venue-card" [tabindex]="i">
+                        <ng-container *ngIf="venue.pic_url; else elseTemplate">
+                            <a [routerLink]="['/venue', 'display', venue._id]">
+                                <img mat-card-image src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Venues/{{venue._id}}/{{venue.pic_url}}' alt="Vendue Picture" class="img-responsive">
+                            </a>
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            <a [routerLink]="['/venue', 'display', venue._id]">
+                                <img mat-card-image src='/assets/images/missing.png' alt="Venue Picture" class="img-responsive">
+                            </a>
+                        </ng-template>
+                        <mat-card-title>
+                            <a [routerLink]="['/venue', 'display', venue._id]">
+                                <h5 class="text-center">{{venue?.name}}</h5>
+                            </a>
+                        </mat-card-title>
+                        <span class="line"></span>
+                        <mat-card-subtitle class="text-center">{{venue?.city | titlecase}}, {{venue?.state | uppercase}}</mat-card-subtitle>
+            
+                        <mat-card-actions>
+                            <button mat-button class="venue-button" [routerLink]="['/venue', 'display', venue._id]" matTooltip="View {{venue.name}}"
+                                [matTooltipShowDelay]="showDelay">VIEW</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </a>
+            </div>
+            <div class="text-center">
+                <button mat-raised-button routerLink="/search" matTooltip="Search for a Venue" [matTooltipShowDelay]="showDelay" id="search-button-style">VIEW MORE VENUES</button>
+            </div>
+        </div>
+    </div>
+</div>

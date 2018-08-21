@@ -1,0 +1,224 @@
+<h2 class="text-center">Add a Venue</h2>
+  <form (submit)="createVenue()" #form="ngForm">
+    <mat-form-field>
+      <input 
+        matInput 
+        type="text"
+        name="name" 
+        required 
+        maxlength=250 
+        [(ngModel)]="newVenue.name"
+         #name='ngModel'
+        placeholder="Venue Name"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        type="email"
+        name="email" 
+        required 
+        maxlength=250 
+        [(ngModel)]="newVenue.email"
+        #email='ngModel'
+        placeholder="Venue Email"
+      />
+      <mat-hint>EX: test@test.com</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        type="tel"
+        name="phone" 
+        required 
+        maxlength=14 
+        [(ngModel)]="newVenue.phone"
+        #phone='ngModel'
+        placeholder="Venue Phone #"
+      />
+      <mat-hint>NO SPACES EX: 123-456-7899</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput
+        type="text"
+        name="address" 
+        required 
+        maxlength=200 
+        [(ngModel)]="newVenue.address"
+        #address='ngModel'
+        placeholder="Venue Address"
+      />
+    </mat-form-field>
+
+    <div class="input-container">
+      <mat-form-field>
+        <input 
+          matInput
+          type="text"
+          name="city" 
+          required 
+          maxlength=150 
+          [(ngModel)]="newVenue.city"
+          #city='ngModel'
+          placeholder="Venue City"
+        />
+        <mat-hint>EX: Tulsa</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input 
+          matInput
+          type="text"
+          name="state" 
+          required 
+          maxlength=3
+          [(ngModel)]="newVenue.state"
+          #state='ngModel'
+          placeholder="Venue State"
+        />
+        <mat-hint>EX: OK</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-label class="form-label">** Latitude and Longitude used for map placement **</mat-label>
+    </div>
+    <div class="input-container">
+      <mat-form-field>
+        <input matInput type="number" name="lat" required maxlength=50 [(ngModel)]="newVenue.lat" #lat='ngModel' placeholder="Latitude" />
+        <mat-hint>EX: 36.153883</mat-hint>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input matInput type="number" name="lng" required maxlength=50 [(ngModel)]="newVenue.lng" #lng='ngModel' placeholder="Longitude" />
+        <mat-hint>EX: -95.990629</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        type="url"
+        name="website" 
+        required 
+        maxlength=250 
+        [(ngModel)]="newVenue.website"
+        #website='ngModel'
+        placeholder="Venue Website" 
+      />
+      <mat-hint>DONT PUT HTTP:// EX: www.example.com</mat-hint>
+    </mat-form-field>
+
+    
+    <div class="input-container">
+      <mat-form-field>
+        <mat-select multiple placeholder="Venue Amenities" name="amenities" required [(ngModel)]="newVenue.amenities" #amenities='ngModel'>
+          <mat-option *ngFor="let amenity of amenitiesList" [value]="amenity._id">{{amenity.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Venue Category" name="_category" required [(ngModel)]="newVenue._category" #_category='ngModel'>
+          <mat-option *ngFor="let category of categories" [value]="category._id">{{category.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-container">
+      <mat-form-field>
+        <span matPrefix>$&nbsp;</span>
+        <input 
+          matInput 
+          type="number" 
+          name="minAmmount" 
+          required 
+          maxlength=250 
+          [(ngModel)]="newVenue.minAmmount"
+          #minAmmount='ngModel'
+          placeholder="Min-ammount" 
+          class="right-align"
+        />
+        <span matSuffix>.00</span>
+      </mat-form-field>
+
+      <mat-form-field>
+        <span matPrefix>$&nbsp;</span>
+        <input 
+          matInput 
+          type="number" 
+          name="maxAmmount" 
+          required 
+          maxlength=250 
+          [(ngModel)]="newVenue.maxAmmount" 
+          placeholder="Max-ammount"
+          #maxAmmount='ngModel'
+          class="right-align"
+        />
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </div> 
+    <div class="input-container">
+      <mat-form-field>
+        <input 
+          matInput 
+          type="number" 
+          name="minCapacity" 
+          maxlength=250 
+          required
+          [(ngModel)]="newVenue.minCapacity"
+          #minCapacity='ngModel'
+          placeholder="Min-capacity" 
+          class="right-align"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input 
+          matInput 
+          type="number" 
+          name="maxCapacity" 
+          maxlength=250 
+          required
+          [(ngModel)]="newVenue.maxCapacity" 
+          placeholder="Max-capacity"
+          #maxCapacity='ngModel'
+          class="right-align"
+        />
+      </mat-form-field>
+    </div> 
+
+    <mat-form-field>
+      <textarea matInput type="text" name="description" required [(ngModel)]="newVenue.description" #description='ngModel' placeholder="Venue description" matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="15"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="url" name="tour" maxlength=500 required [(ngModel)]="newVenue.tour_url" #tour_url='ngModel' placeholder="Venue 3D Tour" />
+      <mat-hint>https://www.transported.co/venueName/t/Fv5mLZTq?embeddable=true</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="url" name="video" required maxlength=500 [(ngModel)]="newVenue.video_url" #video_url='ngModel' placeholder="Venue Video" />
+      <mat-hint>https://player.vimeo.com/video/259357730</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="url" name="facebook" maxlength=500 [(ngModel)]="newVenue.facebook_url" #facebook_url='ngModel' placeholder="Venues facebook URL" />
+      <mat-hint>https://www.facebook.com/venueName</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="url" name="instagram" maxlength=500 [(ngModel)]="newVenue.instagram_url" #instagram_url='ngModel' placeholder="Venues instagram URL" />
+      <mat-hint>https://www.instagram.com/venueName</mat-hint>
+    </mat-form-field>
+
+    <div class="submit-button">
+      <button mat-raised-button type="submit" color="accent">Submit</button>
+    </div>
+  </form>
+
+  <div>
+    <p class="text-center" [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+  </div>

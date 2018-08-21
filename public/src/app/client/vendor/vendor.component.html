@@ -1,0 +1,53 @@
+<div class="col align-self-center" *ngIf="!loaded; else mainTemplate">
+    <div class="loading">
+        <mat-spinner color="primary"></mat-spinner>
+    </div>
+</div>
+<ng-template #mainTemplate>
+    <div class="header-image">
+    </div>
+    <div class="header-text">
+        <h1 class="text-center">THE BEST OF THE BEST</h1>
+        <span class="line"></span>
+        <h6 class="text-center">Choosing the right venue is only part of the equation when it comes to having the perfect wedding day. Listed below are companies
+        that we believe are the best of the best in the wedding industry, able to ensure that your wedding day is everything you
+        dreamed it would be.</h6>
+    </div>
+
+    <div class="middle-top">
+        <h5 class="text-center"> LOOKING FOR A SPECIFIC SERVICE PROVIDER? CHOOSE FROM THE LIST BELOW OR BROWSE ALL OF OUR PREMIUM VENDORS.</h5>
+        <div class="invisible">
+            <input matInput type='text' name='search_text' [(ngModel)]='search_text' id='search-box'>
+        </div>
+        <div class="text-center">
+            <mat-form-field>
+                <mat-select [(ngModel)]='search_text'>
+                    <mat-option [value]="''">View All</mat-option>
+                    <mat-option *ngFor="let category of vendorCategories" [value]="category.name">{{category.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="text-center">
+            <div class="card-group" *ngFor="let vendor of vendors | filterVendors: search_text; let i = index">
+                <mat-card class="card" [tabindex]="i">
+                    <ng-container *ngIf="vendor.pic_url === ''; else elseTemplate">
+                        <img mat-card-image src='/assets/images/missing.png' alt="Vendor Picture">
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <img mat-card-image src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/{{vendor.pic_url}}' alt="Vendor Picture">
+                    </ng-template>
+                    <mat-card-title>
+                        <h5 class="text-center"><span class="color">{{vendor?.name}}</span></h5>
+                        <span class="line"></span>
+                        <mat-card-subtitle class="text-center">{{vendor?.city | titlecase}}, {{vendor?.state | uppercase}}</mat-card-subtitle>
+                    </mat-card-title>
+                    <mat-card-actions>
+                        <button mat-button [routerLink]="['/vendor', 'display', vendor._id]" matTooltip="View {{vendor.name}}">VIEW</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</ng-template>

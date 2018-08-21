@@ -1,0 +1,49 @@
+<div class="container" id="head">
+    <h2 class="text-center">Add a new administrative user</h2>
+    <form (ngSubmit)="createUser()" #registerForm="ngForm">
+        <mat-form-field>
+            <input matInput type="text" name="name" [(ngModel)]="newUser.name" placeholder="Name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="email" name="email" autocomplete="username email" [(ngModel)]="newUser.email" placeholder="Email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" name="password" autocomplete="new-password" [(ngModel)]="newUser.password" placeholder="Password">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" name="password_confirmation" autocomplete="new-password-confirmation" required [(ngModel)]="newUser.password_confirmation"
+            placeholder="Confirm Password">
+        </mat-form-field>
+        
+        <button mat-raised-button type="submit" color="accent" [disabled]="!registerForm.form.valid" (click)="createUser(); registerForm.reset()">Register</button>
+    </form>
+    <div>
+        <p [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+    </div>
+</div>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="users" *ngFor="let user of users; let i = index">
+                <td class="badge">{{ i + 1 }}</td>
+                <td class="main">{{ user.name }}</td>
+                <td>{{user.email}}</td>
+                <td class="delete">
+                    <button mat-icon-button color="warn" (click)="destroyUser(user._id, i)">
+                        <mat-icon aria-label="icon-button to delete venue">
+                            <i class="material-icons">&#xE872;</i>
+                        </mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

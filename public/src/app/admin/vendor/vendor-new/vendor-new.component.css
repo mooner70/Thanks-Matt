@@ -1,0 +1,58 @@
+form {
+    width:50%;
+    margin: auto;
+    overflow: hidden;
+}
+.mat-form-field {
+    width: 100%;
+}
+
+h1 {
+  width:100%;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input-container > * {
+  width: 45%;
+}
+
+.right-align {
+  text-align: right;
+}
+
+input.right-align::-webkit-outer-spin-button,
+input.right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.form-label {
+    margin-top: 3%;
+}
+
+input.right-align {
+  -moz-appearance: textfield;
+}
+
+.file-upload {
+    margin-top: 3%;
+}
+
+button {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.submit-button {
+    margin-top: 3%;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}

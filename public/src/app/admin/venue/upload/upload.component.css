@@ -1,0 +1,19 @@
+form {
+    margin: 3%;
+}
+
+button {
+    margin-top: 2%;
+}
+
+.col-3 {
+    display: inline-block;
+    max-width: 25%;
+    min-width: 25%;
+    margin: 5% 0;
+}
+
+img {
+    max-height: 10rem;
+    min-height: 10rem;
+}

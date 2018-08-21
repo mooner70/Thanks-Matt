@@ -1,0 +1,80 @@
+<h2 class="text-center">Add a Vendor</h2>
+<form (submit)="createVendor()" #form="ngForm">
+  <mat-form-field>
+    <input matInput type="text" name="name" required maxlength=250 [(ngModel)]="newVendor.name" #name='ngModel' placeholder="Vendor Name"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="email" name="email" required maxlength=250 [(ngModel)]="newVendor.email" #email='ngModel' placeholder="Vendor Email"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="tel" name="phone" required maxlength=14 [(ngModel)]="newVendor.phone" #phone='ngModel' placeholder="Vendor Phone #"
+    />
+    <mat-hint>NO SPACES EX: 123-456-7899 </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" name="address" required maxlength=200 [(ngModel)]="newVendor.address" #address='ngModel' placeholder="Vendor Address"
+    />
+  </mat-form-field>
+
+  <div class="input-container">
+    <mat-form-field>
+      <input matInput type="text" name="city" required maxlength=150 [(ngModel)]="newVendor.city" #city='ngModel' placeholder="Vendor City"
+      />
+      <mat-hint>EX: Tulsa</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="state" required maxlength=3 [(ngModel)]="newVendor.state" #state='ngModel' placeholder="Vendor State"
+      />
+      <mat-hint>EX: OK</mat-hint>
+    </mat-form-field>
+  </div>
+
+
+  <mat-form-field>
+    <input matInput type="url" name="website" required maxlength=250 [(ngModel)]="newVendor.website" #website='ngModel' placeholder="Vendor Website"
+    />
+    <mat-hint>EX: www.example.com</mat-hint>
+  </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Vendor Category" name="_category" [(ngModel)]="newVendor._category" #_category='ngModel'>
+        <mat-option *ngFor="let category of categories" [value]="category._id">{{category.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>  
+
+  <mat-form-field>
+    <textarea matInput type="text" name="description" required [(ngModel)]="newVendor.description" #description='ngModel' placeholder="Vendor description"
+      matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="15"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="url" name="video" maxlength=500 required [(ngModel)]="newVendor.video_url" #video_url='ngModel' placeholder="Vendor Video"
+    />
+    <mat-hint>https://player.vimeo.com/video/259357730</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="url" name="facebook" maxlength=500 [(ngModel)]="newVendor.facebook_url" #facebook_url='ngModel' placeholder="Vendors facebook URL"
+    />
+    <mat-hint>https://www.facebook.com/vendorName</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="url" name="instagram" maxlength=500 [(ngModel)]="newVendor.instagram_url" #instagram_url='ngModel' placeholder="Vendors instagram URL"
+    />
+    <mat-hint>https://www.instagram.com/vendorName</mat-hint>
+  </mat-form-field>
+
+  <div class="submit-button">
+    <button mat-raised-button type="submit" color="accent">Submit</button>
+  </div>
+</form>
+
+<div>
+  <p class="text-center" [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+</div>

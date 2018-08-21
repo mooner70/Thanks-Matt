@@ -1,0 +1,27 @@
+{
+  "name": "venue",
+  "version": "1.0.0",
+  "description": "venue",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Cam",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.188.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "busboy": "^0.2.14",
+    "busboy-body-parser": "^0.3.1",
+    "connect-busboy": "0.0.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.1",
+    "mongoose-random": "^0.1.1",
+    "morgan": "^1.9.0"
+  }
+}

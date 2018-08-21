@@ -1,0 +1,34 @@
+<div class="header">
+    <h2 class="text-center">Admin Dashboard</h2>
+</div>
+<div>
+    <mat-chip-list>
+        <mat-chip color="plain" selected="true" routerLink="/list_venue">
+            Total Venues:
+            <div *ngIf="venues">
+                {{ venues.length }}
+            </div>
+        </mat-chip>
+        <mat-chip color="plain" selected="true" routerLink="/list_vendor">
+            Total Vendors: 
+            <div *ngIf="vendors">
+                {{ vendors.length }}
+            </div>
+        </mat-chip>
+        <mat-chip color="plain" selected="true" routerLink="/list_amenity">
+            Total Amenities:
+            <div mat-chip-value *ngIf="amenities">
+                {{ amenities.length }}
+            </div>
+        </mat-chip>
+        <mat-chip color="plain" selected="true" routerLink="/list_admin">
+            Total Users:
+            <div mat-chip-value *ngIf="users">
+                {{ users.length }}
+            </div>
+        </mat-chip>
+    </mat-chip-list>
+</div>
+<div>
+    <iframe [src]="url | adminSafe" width="100%" height="900px" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>

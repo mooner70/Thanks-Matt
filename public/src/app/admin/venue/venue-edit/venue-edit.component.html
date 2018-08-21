@@ -1,0 +1,252 @@
+<h2 class="text-center">Editing {{venue.name}}</h2>
+<div class="container">
+  <form (submit)="updateVenue()" #formData="ngForm" class="form">
+    <mat-form-field>
+      <input 
+        matInput 
+        name='name' 
+        [(ngModel)]="venue.name" 
+        #name='ngModel' 
+        placeholder="name" 
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        name='email' 
+        [(ngModel)]="venue.email" 
+        #email='ngModel' 
+        placeholder="Email" 
+        required
+      />
+      <mat-hint>EX: test@test.com</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        name='phone' 
+        [(ngModel)]="venue.phone" 
+        #phone='ngModel' 
+        placeholder="Phone #" 
+        required
+      />
+      <mat-hint>NO SPACES EX: 123-456-7899</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        name='address' 
+        [(ngModel)]="venue.address" 
+        #address='ngModel' 
+        placeholder="Address" 
+        required
+      />
+    </mat-form-field>
+
+    <div class="input-container">
+      <mat-form-field>
+        <input 
+          matInput
+          type="text"
+          name="city" 
+          required 
+          maxlength=150 
+          [(ngModel)]="venue.city"
+          #city='ngModel'
+          placeholder="Venue City"
+        />
+        <mat-hint>EX: Tulsa</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <input 
+          matInput
+          type="text"
+          name="state" 
+          required 
+          maxlength=3
+          [(ngModel)]="venue.state"
+          #state='ngModel'
+          placeholder="Venue State"
+        />
+        <mat-hint>EX: OK</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="input-container">
+      <mat-form-field>
+        <input 
+          matInput 
+          name="lat" 
+          required 
+          maxlength=50 
+          [(ngModel)]="venue.lat" 
+          #lat='ngModel' 
+          placeholder="Latitude" 
+        />
+        <mat-hint>EX: 36.153883</mat-hint>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input 
+          matInput 
+          name="lng" 
+          required 
+          maxlength=50 
+          [(ngModel)]="venue.lng" 
+          #lng='ngModel' 
+          placeholder="Longitude" 
+        />
+        <mat-hint>EX: -95.990629</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        type="url"
+        name='website' 
+        [(ngModel)]="venue.website" 
+        #website='ngModel' 
+        placeholder="Website" 
+        required
+      />
+      <mat-hint>DONT PUT HTTP:// EX: www.example.com</mat-hint>
+    </mat-form-field>
+
+    <div class="input-container">
+      <mat-form-field>
+        <span matPrefix>$&nbsp;</span>
+        <input 
+          matInput type="number" 
+          name="minAmmount" 
+          required 
+          maxlength=250 
+          [(ngModel)]="venue.minAmmount" 
+          #minAmmount='ngModel'
+          placeholder="Min-ammount"
+          class="right-align"
+        />
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <span matPrefix>$&nbsp;</span>
+        <input 
+          matInput 
+          type="number" 
+          name="maxAmmount" 
+          required 
+          maxlength=250 
+          [(ngModel)]="venue.maxAmmount"
+          #maxAmmount='ngModel'
+          placeholder="Max-ammount"
+          class="right-align"
+        />
+        <span matSuffix>.00</span>
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field>
+        <input 
+          matInput type="number" 
+          name="minCapacity"  
+          maxlength=250 
+          [(ngModel)]="venue.minCapacity" 
+          #minCapacity='ngModel'
+          placeholder="Min-capacity"
+          class="right-align"
+        />
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input 
+          matInput 
+          type="number" 
+          name="maxCapacity" 
+          maxlength=250 
+          [(ngModel)]="venue.maxCapacity"
+          #maxCapacity='ngModel'
+          placeholder="Max-capacity"
+          class="right-align"
+        />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <textarea matInput type="text" name="description" required [(ngModel)]="venue.description" #description='ngModel' placeholder="Venue description"
+        matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="15"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput 
+        type="url"
+        name='tour_url' 
+        [(ngModel)]="venue.tour_url" 
+        #tour_url='ngModel' 
+        placeholder="Tour url" 
+        required 
+      />
+      <mat-hint>https://www.transported.co/venueName/t/Fv5mLZTq?embeddable=true</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input 
+        matInput
+        type="url"
+        name='video_url' 
+        [(ngModel)]="venue.video_url" 
+        #video_url='ngModel' 
+        placeholder="Video url" 
+        required 
+      />
+      <mat-hint>https://player.vimeo.com/video/259357730</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="url" name="facebook" maxlength=500 [(ngModel)]="venue.facebook_url" #facebook_url='ngModel' placeholder="Venues facebook URL"
+      />
+      <mat-hint>https://www.facebook.com/venueName</mat-hint>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput type="url" name="instagram" maxlength=500 [(ngModel)]="venue.instagram_url" #instagram_url='ngModel' placeholder="Venues instagram URL"
+      />
+      <mat-hint>https://www.instagram.com/venueName</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select 
+        name="amenities" 
+        [(ngModel)]="venue.amenities" 
+        #amenities='ngModel' 
+        placeholder="Venue Amenities" 
+        multiple>
+        <mat-option *ngFor="let amenity of amenityList" [value]="amenity._id">
+          {{amenity.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-select  
+        name="category" 
+        [(ngModel)]="venue._category"
+        #category='ngModel' 
+        placeholder="Category">
+        <mat-option *ngFor="let category of categories" [value]="venue._category">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <button mat-raised-button type='submit'>Submit</button>
+  </form>
+  <div>
+    <p class="text-center" [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+  </div>
+</div>

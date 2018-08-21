@@ -1,0 +1,79 @@
+<div class="container">
+    <div>
+        <h2 class="text-center">Cover Image</h2>
+    </div>
+    <div class="col-3">
+        <form (ngSubmit)="uploadOne()" #form encType="multipart/form-data">
+            <div class="file-upload">
+                <input #file type="file" name="picture">
+            </div>
+            <div class="submit-button">
+                <button mat-raised-button type="submit" color="accent">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <p [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+    </div>
+    <div class="col-3" *ngIf="vendor.pic_url">
+        <mat-card>
+            <img mat-card-image src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/{{vendor.pic_url}}' alt="Vendor Picture">
+            <mat-card-actions class="text-center">
+                <button mat-button (click)="deleteImage()" color="warn">Delete</button>
+            </mat-card-actions>
+        </mat-card>
+        
+    </div>
+    <hr>
+    <div>
+        <h2 class="text-center">Logo</h2>
+    </div>
+    <div class="col-3">
+        <form (ngSubmit)="uploadLogo()" #logoform encType="multipart/form-data">
+            <div class="file-upload">
+                <input #file type="file" name="picture">
+            </div>
+            <div class="submit-button">
+                <button mat-raised-button type="submit" color="accent">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <p [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+    </div>
+    <div class="col-3" *ngIf="vendor.logo_url">
+        <mat-card>
+            <img mat-card-image src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/Logo/{{vendor.logo_url}}' alt="Vendor Logo">
+            <mat-card-actions class="text-center">
+                <button mat-button (click)="deleteLogo()" color="warn">Delete</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <hr>
+    <div>
+        <h2 class="text-center">Gallery Images</h2>
+    </div>
+    <div class="col-12">
+        <form (ngSubmit)="uploadMultiple()" #formMultiple encType="multipart/form-data">
+            <div class="file-upload">
+                <input #files type="file" name="picture" multiple>
+            </div>
+            <div class="submit-button">
+                <button mat-raised-button type="submit" color="accent">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <p [ngStyle]="{ 'color': 'red' }" *ngFor="let error of errors">{{ error }}</p>
+    </div>
+    <div class="row" *ngIf="vendor.gallery">
+        <div class="col-3" *ngFor="let gallery of vendor.gallery; let i = index">
+            <mat-card>
+                <img mat-card-image src='https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/Gallery/{{gallery.name}}' alt="Vendor Gallery Picture">
+                <mat-card-actions class="text-center">
+                    <button mat-button (click)="deleteGalleryImage(i)" color="warn">Delete</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

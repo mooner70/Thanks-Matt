@@ -1,0 +1,56 @@
+@media (max-width: 450px) {
+
+    .mat-icon[_ngcontent-c2] {
+        max-height: 0.8em!important;
+        min-height: 0.8em!important;
+        max-width: 0.8em!important;
+        min-width: 0.8em!important;
+    }
+    p {
+        font-size: 0.6em!important;
+    }
+}
+@media (min-width: 451px) and (max-width: 575.98px) {
+
+    .mat-icon[_ngcontent-c2] {
+        max-height: 0.8em!important;
+        min-height: 0.8em!important;
+        max-width: 0.8em!important;
+        min-width: 0.8em!important;
+    }
+    
+    p {
+        font-size: 0.6em!important;
+    }
+}
+
+footer {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mat-icon {
+    max-height: 1em;
+    min-height: 1em;
+    max-width: 1em;
+    min-width: 1em;
+}
+
+li {
+    margin: 1%;
+}
+
+p {
+    margin: 0;
+    font-size: 0.8em;
+}
+
+a {
+  color: #fff;
+}

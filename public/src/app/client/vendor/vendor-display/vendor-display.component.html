@@ -1,0 +1,85 @@
+<div class="col align-self-center" *ngIf="!loaded; else mainTemplate">
+    <div class="loading">
+        <mat-spinner color="primary"></mat-spinner>
+    </div>
+</div>
+<ng-template #mainTemplate>
+    <div class="containerX">
+        <div id="slider">
+            <figure *ngFor="let gallery of vendor.gallery">
+                <img src="https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/Gallery/{{gallery.name}}" alt>
+            </figure>
+        </div>
+        <div class="container-fluid">
+            <div class="row" id="top">
+                <div class="col-3" id="left-col">
+                    <div class="top-left">
+                        <div class="text-center">
+                            <img src="https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/Logo/{{vendor.logo_url}}" class="img-thumbnail" alt="Vendor Logo">
+                        </div>
+                        <ul class="text-left">
+                            <li>
+                                <a href='tel:{{ vendor.phone }}' data-type='phone' matTooltip="Call {{vendor.name}}">
+                                    <p>{{ vendor.phone }}</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='mailto:{{ vendor.email }}' target='_top' matTooltip="Email {{vendor.name}}">
+                                    <p>
+                                        <span class="color">{{ vendor.email }}</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='http://{{vendor.website}}' target='_blank' rel='nofollow noopener noreferrer' matTooltip="View {{vendor.name}}'s' website">
+                                    <p>
+                                        <span class="color">{{ vendor.website }}</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li *ngIf="vendor.facebook_url" class="social-media">
+                                <a href='{{vendor.facebook_url}}' target='_blank' rel='noopener' matTooltip="{{vendor.name}}'s' Facebook page">
+                                    <img src="/assets/images/facebook.svg" alt="Facebook link">
+                                </a>
+                            </li>
+                            <li *ngIf="vendor.instagram_url" class="social-media">
+                                <a href='{{vendor.instagram_url}}' target='_blank' rel='noopener' matTooltip="{{vendor.name}}'s' Facebook page">
+                                    <img src="/assets/images/instagram.svg" alt="instagram link">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-9" id="right-col">
+                    <div id="top-right">
+                        <div class="container">
+                            <div class="text-center">
+                                <h2>{{vendor.name}}</h2>
+                                <p>{{vendor.description}}</p>
+                            </div>
+                        </div>
+                        <div class="links">
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <iframe [src]="url | safe" width="600" height="338" frameborder="0" webkitallowfullscreen
+                                        mozallowfullscreen allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="services">
+                            <div class="text-center">
+                                <h2>Services</h2>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div *ngFor="let gallery of vendor.gallery" id="gallery">
+                            <div class="col-2">
+                                <img src="https://s3-us-west-2.amazonaws.com/tulsa-venues/Vendors/{{vendor._id}}/Gallery/{{gallery.name}}" alt="Vendor Gallery Picture" class="img-thumbnail gallery-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

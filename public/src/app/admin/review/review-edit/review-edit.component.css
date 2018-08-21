@@ -1,0 +1,19 @@
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+form {
+    padding: 5%;
+    width:50%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+textarea {
+    width: 90%;
+}
